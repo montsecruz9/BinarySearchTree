@@ -33,7 +33,7 @@ public class TreeNode {
 
     public TreeNode get (int value) {
         if (value == data) {
-            return;
+            return this;
         }
         if (value < data) {
             if (leftChild != null) {
@@ -45,7 +45,7 @@ public class TreeNode {
                 return rightChild.get(value);
             }
         }
-        
+
         return null;
     }
 
@@ -83,5 +83,10 @@ public class TreeNode {
 
     public void setRightChild(TreeNode rightChild) {
         this.rightChild = rightChild;
+    }
+
+    @Override
+    public String toString() {
+        return "Data = " + data;
     }
 }
