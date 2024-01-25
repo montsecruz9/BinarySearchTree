@@ -4,6 +4,11 @@ public class TreeNode {
     private TreeNode leftChild;
     private TreeNode rightChild;
 
+    //constructor
+    public TreeNode(int data) {
+        this.data = data;
+    }
+
     public void insert(int value) {
         if (value == data) {
             return;
@@ -26,6 +31,24 @@ public class TreeNode {
         }
     }
 
+    public TreeNode get (int value) {
+        if (value == data) {
+            return;
+        }
+        if (value < data) {
+            if (leftChild != null) {
+                return leftChild.get(value);
+            }
+        }
+        else {
+            if (rightChild != null) {
+                return rightChild.get(value);
+            }
+        }
+        
+        return null;
+    }
+
     //In=Order traversal method. We're not gonna pass anything as we're gonna start in this node
     //visit the left child, then the root, then the right child
     public void traverseInOrder() {
@@ -36,11 +59,6 @@ public class TreeNode {
         if (rightChild != null) {
             rightChild.traverseInOrder();
         }
-    }
-
-    //constructor
-    public TreeNode(int data) {
-        this.data = data;
     }
 
     public int getData() {
