@@ -18,6 +18,26 @@ public class Tree {
         return null;
     }
 
+    public int min() {
+        if (root == null) {
+            //if the tree is empty, the console will return the smallest value you can put into an integer
+            return Integer.MIN_VALUE;
+        }
+        else {
+            return root.min();
+        }
+    }
+
+    public int max() {
+        if (root == null) {
+            //if the tree is empty, the console will return the highest value you can put into an integer
+            return Integer.MAX_VALUE;
+        }
+        else {
+            return root.max();
+        }
+    }
+
     public void traverseInOrder() {
         if (root != null) {
             root.traverseInOrder();
