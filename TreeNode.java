@@ -26,6 +26,18 @@ public class TreeNode {
         }
     }
 
+    //In=Order traversal method. We're not gonna pass anything as we're gonna start in this node
+    //visit the left child, then the root, then the right child
+    public void traverseInOrder() {
+        if (leftChild != null) {
+            leftChild.traverseInOrder();
+        }
+        System.out.print("Data = " + data + ", ");
+        if (rightChild != null) {
+            rightChild.traverseInOrder();
+        }
+    }
+
     //constructor
     public TreeNode(int data) {
         this.data = data;
