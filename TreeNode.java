@@ -49,6 +49,26 @@ public class TreeNode {
         return null;
     }
 
+    //min method
+    public int min() {
+        if (leftChild == null) {
+            return data;
+        }
+        else {
+            return leftChild.min();
+        }
+    }
+
+    //max method
+    public int max() {
+        if (rightChild == null) {
+            return data;
+        }
+        else {
+            return rightChild.max();
+        }
+    }
+
     //In=Order traversal method. We're not gonna pass anything as we're gonna start in this node
     //visit the left child, then the root, then the right child
     public void traverseInOrder() {
